@@ -1,1 +1,13 @@
-<p>barras works!</p>
+<h1 class="border-bottom">Gráfia de Barras</h1>
+<div class="row">
+    <div class="col">
+        <div>
+            <canvas baseChart
+              [data]="barChartData"
+              [options]="barChartOptions"
+              [type]="barChartType">
+            </canvas>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="randomize()">Update</button>
+    </div>
+</div>
