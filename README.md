@@ -18,3 +18,7 @@ https://valor-software.com/ng2-charts/
 
 ## Server
     > json-server --watch db.json
+
+## Proyecto subido a producción
+El proyecto fue subido al servicio de netlify: https://app.netlify.com/teams/magadiflo/overview
+Para ver el proyecto ejecutándose, ir a esta dirección: https://angry-jang-b98cf8.netlify.app
