@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ChartData, ChartType } from 'chart.js';
 
 import { GraficasService } from '../../services/graficas.service';
@@ -23,18 +24,11 @@ export class DonaHttpComponent implements OnInit {
   constructor(private graficasService: GraficasService) { }
 
   ngOnInit(): void {
-    this.graficasService.getUsuariosRedesSociales()
-      .subscribe(data => {
-        const labels = Object.keys(data);
-        const values = Object.values(data);
-
-        this.doughnutChartLabels = labels;
-        this.datasets.push({ data: values });
-
-        // console.log(this.doughnutChartLabels);
-        // console.log(this.datasets);
+    this.graficasService.getUsuariosRedesSocialesData()
+      .subscribe(({ labels, data }) => {
+        this.datasets.push(data);
         this.doughnutChartData = {
-          labels: this.doughnutChartLabels,
+          labels: labels,
           datasets: this.datasets,
         }
       });
